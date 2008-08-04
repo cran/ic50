@@ -10,7 +10,7 @@ preimage<-function(y0,x,y){
 
 linearCurve<-function(x,y){ #Werte für stückweise lineare Kurve berechnen
   x<-round(x,2)
-  xgr<-round(seq(from=min(x),to=max(x),by=.005),3)
+  xgr<-round(seq(from=min(x),to=max(x),by=.001),3)
   ylin<-numeric(0)
   n<-length(x)
   for(i in 2:n){

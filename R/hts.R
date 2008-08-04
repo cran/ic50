@@ -6,7 +6,7 @@ hts.96<-function(indir=".",plates=2,
     warning(paste("New output directory",outdir,"created."))
     dir.create(outdir)
   }
-  pdf(file=paste(outdir,"/killcurves.pdf",sep=""),height=8,width=11)
+  pdf(file=paste(outdir,"/dose_response_curves.pdf",sep=""),height=8,width=11)
   for(i in seq(1,length(files)-plates+1,plates)){
     cat("Evaluating data in",files[i:(i+plates-1)],"\n")
     results_cp<-ic50.96(files=paste(indir,"/",files[i:(i+plates-1)],sep=""),
@@ -31,7 +31,7 @@ hts.384<-function(indir=".",plates=2,
     warning(paste("New output directory",outdir,"created."))
     dir.create(outdir)
   }
-  pdf(file=paste(outdir,"/killcurves.pdf",sep=""),height=8,width=11)
+  pdf(file=paste(outdir,"/dose_response_curves.pdf",sep=""),height=8,width=11)
   for(i in seq(1,length(files)-plates+1,plates)){
     cat("Evaluating data in",files[i:(i+plates-1)],"\n")
     results_cp<-ic50.384(files=paste(indir,"/",files[i:(i+plates-1)],sep=""),

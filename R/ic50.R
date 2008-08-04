@@ -5,7 +5,7 @@ ic50<-function(){
   require(tcltk)
   files<-character(0)
   main<-tktoplevel()
-  tkwm.title(main,"Automatic screen evaluation v1.2")
+  tkwm.title(main,"Automatic screen evaluation v1.3")
   
   #Add option boxes for plate format
   op96<-tkradiobutton(main,text="96 wells  ")

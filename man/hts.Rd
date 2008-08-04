@@ -27,7 +27,7 @@ hts.384(indir=".",plates=2,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
     \code{control} is used; \code{"single"} requires one individual
     control well per measurement well.}
   \item{graphics}{A character specifying the plotting method. For
-    \code{"mean"}, a killcurve of the mean values of the measurement
+    \code{"mean"}, a dose-response curve of the mean values of the measurement
     series is given, whereas one curve is plotted for each if \code{"single"} is
     specified. For \code{"fitted"}, a sigmoid-shaped derivation of the
     logistic model is fitted to the data.}  
@@ -36,10 +36,10 @@ hts.384(indir=".",plates=2,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
 \details{
   In cytotoxicity screens of chemical compounds, biological activity is
   typically quantified by the concentration for which a particular
-  fraction (typically 0.5) of the cells has been killed after a predefined
+  fraction (typically 0.5) of cell growth is inhibited after a predefined
   treatment period. For this purpose, all concentrations are plotted
   against the percentages of cells still being alive under this
-  treatment, forming a kill-curve under which the preimage of the 0.5
+  treatment, forming a dose-response curve under which the preimage of the 0.5
   point is defined as the half-maximum inhibitory concentration
   (IC50). For high-throughput screens (HTS), in particular, the
   evaluation of the data needs to be performed in an automatic fashion.
@@ -51,14 +51,17 @@ hts.384(indir=".",plates=2,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
   two plates with replicates for the same measurements
   are displayed one below the other in a file browser. The data are
   expected to be arranged in tab-delimited text files which is the typical
-  output of appropriate signal readers. Just as for the
+  output of appropriate microplate readers. Just as for the
   evaluation of a single measurement, the design must be specified by
   tab-delimited files for \code{measure}, \code{control} and
   \code{dilution}. Details on these are given in the manual of the
-  \code{\link{default384_measure}} and \code{\link{default384_control}} files.
+  \code{\link{default384_measure}} and \code{\link{default384_control}}
+  files. In addition, a tutorial document
+  describing how to prepare the data and configuration is included in
+  the \code{ic50} package.
 
   For each compound in the screen and each group of data files, a
-  graphics output is given in the file \code{"killcurves.pdf"} in the
+  graphics output is given in the file \code{"dose_response_curves.pdf"} in the
   current workspace directory. In addition, the text file
   \code{"ic50.txt"} contains a tab-delimted table with the same
   evaluation as for the \code{\link{ic50.96}} and \code{\link{ic50.384}}
@@ -71,7 +74,7 @@ hts.384(indir=".",plates=2,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
 }
 \value{A data frame with the following columns:
   \item{first_file}{Filename of the respective first input file.}
-  \item{compound} Compound names
+  \item{compound}{Compound names.}
   \item{ic50}{The inhibitory concentrations for the respective compounds.}
   \item{clow}{Lower 0.95 confidence limits for the IC values.}
   \item{cup}{Upper 0.95 confidence limits for the IC values.}

@@ -2,7 +2,7 @@ meanplot<-function(x,y,ic50,cl,cu,stddev,file,cpname){
   y_mean<-numeric(0)
   for(cn in 1:length(y[1,])) y_mean[cn]<-mean(y[,cn])
   plot(x,100*y_mean,xaxt="n",pch=".",
-       xlab=expression(paste("concentration [",mu,"mol]",sep="")),ylab="vitality [%]",
+       xlab=expression(paste("concentration [",mu,"mol]",sep="")),ylab="viability [%]",
        xlim=c(floor(min(x)),ceiling(max(x))),ylim=c(0,max(100,max(100*(y_mean+stddev)))),
        main=paste("file ",strsplit(file,"/")[[1]][length(strsplit(file,"/")[[1]])]," (first), compound ",cpname,sep=""))
   range<-seq(-6,6,by=1)[floor(min(x))<=seq(-6,6,by=1) & seq(-6,6,by=1)<=ceiling(max(x))]
@@ -31,7 +31,7 @@ fittedplot<-function(x,y,ic50,cu,cl,file,cpname){
   y_mean<-numeric(0)
   for(cn in 1:length(y[1,])) y_mean[cn]<-mean(y[,cn])
   plot(x,100*y_mean,xaxt="n",
-       xlab=expression(paste("concentration [",mu,"mol]",sep="")),ylab="vitality [%]",
+       xlab=expression(paste("concentration [",mu,"mol]",sep="")),ylab="viability [%]",
        xlim=c(floor(min(x)),ceiling(max(x))),ylim=c(0,max(100,max(100*y_mean))),
        main=paste("file ",strsplit(file,"/")[[1]][length(strsplit(file,"/")[[1]])]," (first), compound ",cpname,sep=""))
   range<-seq(-6,6,by=1)[floor(min(x))<=seq(-6,6,by=1) & seq(-6,6,by=1)<=ceiling(max(x))]
@@ -59,7 +59,7 @@ singleplot<-function(x,y,ic50,cu,cl,file,cpname){
   for(cn in 1:length(y[1,])) y_mean[cn]<-mean(y[,cn])
   
   plot(x,100*y_mean,xaxt="n",pch=".",
-       xlab=expression(paste("concentration [",mu,"mol]",sep="")),ylab="vitality [%]",
+       xlab=expression(paste("concentration [",mu,"mol]",sep="")),ylab="viability [%]",
        xlim=c(floor(min(x)),ceiling(max(x))),ylim=c(0,max(100,max(100*y))),
        main=paste("file ",strsplit(file,"/")[[1]][length(strsplit(file,"/")[[1]])]," (first), compound ",cpname,sep=""))
   range<-seq(-6,6,by=1)[floor(min(x))<=seq(-6,6,by=1) & seq(-6,6,by=1)<=ceiling(max(x))]

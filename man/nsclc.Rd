@@ -13,7 +13,7 @@
   For purpose of computational, lesion-based prediction of compound
   activity in 84 non-small cell lung cancer (NSCLC) cell lines, these
   were treated with a selection of compounds to measure the respective
-  concentration where 50 per cent of the cells had been killed after a
+  concentration where 50 per cent of cell growth was inhibited after a
   predefined time period. Most of the screening experiments were
   performed on 384 (16 x 24)-well plates, were the experimental setup was
   designed according to the arrangement in the files

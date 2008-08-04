@@ -52,7 +52,11 @@
   files is to simply start the GUI using \code{ic50()} which
   automatically creates a default version to be modified by the
   user. After having saved this configuration, it can be repeatedly used
-  for screen evaluations as long as the experimental setup is not changed.
+  for screen evaluations as long as the experimental setup is not
+  changed.
+
+  A step-by-step tutorial document describing how to prepare the data and
+  configuration  is included in the \code{ic50} package.
 }
 %\references{
 %  Michel K, Zander T, Frommolt P, Sos ML et al. (2008): Predicting drug activity
