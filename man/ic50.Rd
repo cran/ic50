@@ -1,14 +1,12 @@
 \name{ic50}
-\alias{ic50}
 \alias{ic50.96}
 \alias{ic50.384}
-\title{Evaluation of compound screens}
+\title{Standardized evaluation of compound screens}
 \description{
   Calculation of IC50 values, automatic drawing of kill-curves and
   validation of compound screens on 96- and 384-well plates.
 }
 \usage{
-ic50()
 ic50.96(files,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
         normalize="mean",graphics="mean",outdir="./results")
 ic50.384(files,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
@@ -44,11 +42,11 @@ ic50.384(files,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
   against the percentages of cells still being alive under this
   treatment, forming a kill-curve under which the preimage of the 0.5
   point is defined as the half-maximum inhibitory concentration
-  (IC50). For high-throughput screening assays (HTS), in particular, the
+  (IC50). For high-throughput screens (HTS), in particular, the
   evaluation of the data needs to be performed in an automatic fashion.
 
   The data input for the script is performed by tab-delimited data files
-  that are the typical output from appropriate signal readers. A
+  which are the typical output from appropriate signal readers. A
   character vector of file names is therefore expected as the first
   argument to the functions. If 96- or 384-well plates are used for the
   screen, the arrangement of the wells is in principle arbitrary. The
@@ -62,51 +60,39 @@ ic50.384(files,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
   sets, e.g. for \code{default384_measure}.
 
   For each compound in the screen, a graphics output is given in the
-  file \code{"killcurves.pdf"} in the specified output directory, where
-  the screen data are displayed as a kill-curve and approximated by a
-  sigmoidal-shaped curve derived from the logistic function. In
+  file \code{"killcurves.pdf"} in the output directory, where the screen
+  data are displayed as specified by the argument \code{graphics}. In
   addition, quantitative results are written to a file \code{"ic50.txt"}
   in the same directory. Inhibitory concentrations are calculated for
   each of the curves and are given together with the respective
   confidence intervals. The measurement accuracy is evaluated by the
   maximum of the standard deviations at the respective concentrations
   and by the coefficient of variation of the concentration values as
-  determined from the single replicates. To get an idea of the
-  systematic error occuring in each measurement, the area between the
-  measured curve and the exponentially fitted curve is given, where the
-  latter is regarded as the "ideal" shape for all killcurves. Finally,
-  the normalized data rows detected from the plates in use are written
-  to the file \code{"measurement.txt"}, combined in one group for each
-  compound.
-
-  \code{ic50()} starts a GUI-based version of the \code{hts.96} and
-  \code{hts.384} functions.
+  determined from the single replicates. Finally, the normalized data
+  rows detected from the plates in use are written to the file
+  \code{"measurement.txt"}, combined in one group for each compound.
 }
 \value{
   A data frame with the following variables:
-  \item{ic}{The inhibitory concentrations for the respective compounds.}
-  \item{cl}{Lower 0.95 confidence limits for the IC values.}
-  \item{cu}{Upper 0.95 confidence limits for the IC values.}
-  \item{inhib}{The inhibition percentages for the concentrations \code{ic}.}
+  \item{compound} Compound names
+  \item{ic50}{The inhibitory concentrations for the respective compounds.}
+  \item{clow}{Lower 0.95 confidence limits for the IC values.}
+  \item{cup}{Upper 0.95 confidence limits for the IC values.}
   \item{maxsd}{Maximum of the standard deviations at the measured
     concentrations as determined from the single replicates.}
   \item{cv}{Coefficient of variation of the IC values as determined
     from the single replicates.}
-  \item{area}{Area between the measured and an ideal kill-curve.}
 }
-\references{
-  Tallarida RJ (2000): Drug synergism and dose-effect data
-  analysis. Chapman & Hall, New York
+%\references{
+%  Michel K, Zander T, Frommolt P, Sos ML et al. (2008): Predicting drug activity
+%  in non-small cell lung cancer based on genetic lesions. Submitted
 
-  %Frommolt P, Thomas RK (2008): A standard for evaluation and validation of
-  %high-throughput screening assays. Bioinformatics?
-
-  Michel K, Zander T, Frommolt P et al. (2008): Predicting drug activity
-  in non-small cell lung cancer based on genetic lesions.
-}
+%  Frommolt P, Thomas RK (2008): Standardized high-throughput evaluation
+%  of compound screens. Submitted
+%}
 \author{
   Peter Frommolt, University of Cologne \email{peter.frommolt@uni-koeln.de}\cr
-  \url{http://www.medizin.uni-koeln.de/kai/imsie/Peter.Frommolt/}  
+  \url{http://www.medizin.uni-koeln.de/kai/imsie/homepages/Peter.Frommolt/}  
 }
 \note{
   The nonlinear regression for the sigmoidal-shaped curve is \bold{not}
@@ -132,7 +118,6 @@ print(ic50.384(files=c("HCC2429_1.txt","HCC2429_2.txt"),
                inhib=rep(0.5,7),outdir="./HCC2429_results",normalize="mean"))
 
 }
-\keyword{design}
 \keyword{hplot}
 \keyword{dplot}
 \keyword{nonlinear}

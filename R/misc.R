@@ -36,27 +36,39 @@ expCurve<-function(x,y){
 
 defaultfiles.write<-function(){
   if(!file.exists(".last384_measure.txt")){
-    measure384<-data(default384_measure)
-    write.table(measure384,file=".last384_measure.txt",col.names=FALSE,sep="\t",row.names=FALSE)
+    default384_measure<-NULL
+    rm(default384_measure)
+    data("default384_measure")
+    write.table(default384_measure,file=".last384_measure.txt",col.names=FALSE,sep="\t",row.names=FALSE)
   }
   if(!file.exists(".last384_control.txt")){
-    control384<-data(default384_control)
-    write.table(control384,file=".last384_control.txt",col.names=FALSE,sep="\t",row.names=FALSE)
+    default384_control<-NULL
+    rm(default384_control)
+    data("default384_control")
+    write.table(default384_control,file=".last384_control.txt",col.names=FALSE,sep="\t",row.names=FALSE)
   }
   if(!file.exists(".last384_dilution.txt")){
-    dilution384<-data(default384_dilution)
-    write.table(dilution384,file=".last384_dilution.txt",col.names=FALSE,sep="\t",row.names=FALSE)
+    default384_dilution<-NULL
+    rm(default384_dilution)
+    data("default384_dilution")
+    write.table(default384_dilution,file=".last384_dilution.txt",col.names=FALSE,sep="\t",row.names=FALSE)
   }
   if(!file.exists(".last96_measure.txt")){
-    measure96<-data(default96_measure)
-    write.table(measure96,file=".last96_measure.txt",col.names=FALSE,sep="\t",row.names=FALSE)
+    default96_measure<-NULL
+    rm(default96_measure)
+    data("default96_measure")
+    write.table(default96_measure,file=".last96_measure.txt",col.names=FALSE,sep="\t",row.names=FALSE)
   }
   if(!file.exists(".last96_control.txt")){
-    control96<-data(default96_control)
-    write.table(control96,file=".last96_control.txt",col.names=FALSE,sep="\t",row.names=FALSE)
+    default96_control<-NULL
+    rm(default96_control)
+    data("default96_control")
+    write.table(default96_control,file=".last96_control.txt",col.names=FALSE,sep="\t",row.names=FALSE)
   }
   if(!file.exists(".last96_dilution.txt")){
-    dilution96<-data(default96_dilution)
-    write.table(dilution96,file=".last96_dilution.txt",col.names=FALSE,sep="\t",row.names=FALSE)
+    default96_dilution<-NULL
+    rm(default96_dilution)
+    data("default96_dilution")
+    write.table(default96_dilution,file=".last96_dilution.txt",col.names=FALSE,sep="\t",row.names=FALSE)
   }
 }

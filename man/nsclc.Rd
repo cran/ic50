@@ -26,8 +26,11 @@
   selected from the 84 NSCLC cell lines collection. A tab-delimited version
   is installed together with the package.
 }
-\references{
-  Michel K, Zander T, Frommolt P et al. (2008): Predicting drug activity
-  in non-small cell lung cancer based on genetic lesions. PLoS Med, submitted
-}
+%\references{
+%  Michel K, Zander T, Frommolt P, Sos ML et al. (2008): Predicting drug activity
+%  in non-small cell lung cancer based on genetic lesions. Submitted
+
+%  Frommolt P, Thomas RK (2008): Standardized high-throughput evaluation
+%  of compound screens. Submitted
+%}
 \keyword{datasets}

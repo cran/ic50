@@ -10,8 +10,8 @@ hts.96<-function(indir=".",plates=2,
   for(i in seq(1,length(files)-plates+1,plates)){
     cat("Evaluating data in",files[i:(i+plates-1)],"\n")
     results_cp<-ic50.96(files=paste(indir,"/",files[i:(i+plates-1)],sep=""),
-                         measure=measure,control=control,dilution=dilution,
-                         inhib=inhib,normalize=normalize,graphics=graphics,outdir=NULL)
+                        measure=measure,control=control,dilution=dilution,
+                        inhib=inhib,normalize=normalize,graphics=graphics,outdir=NULL)
     filenames<-rep(files[i],length(results_cp$ic50))
     if(i==1) results<-cbind(filenames,results_cp)
     else results<-rbind(results,cbind(filenames,results_cp))

@@ -1,10 +1,11 @@
 ic50<-function(){
+  cat("NOTE: Preliminary change of the workspace directory to the folder\ncontaining the data will remarkably reduce the number of mouse clicks.\n")
   InhibPerc<-NULL
   defaultfiles.write()
   require(tcltk)
   files<-character(0)
   main<-tktoplevel()
-  tkwm.title(main,"Automatic screen evaluation v1.0")
+  tkwm.title(main,"Automatic screen evaluation v1.2")
   
   #Add option boxes for plate format
   op96<-tkradiobutton(main,text="96 wells  ")

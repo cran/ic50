@@ -52,12 +52,14 @@
   files is to simply start the GUI using \code{ic50()} which
   automatically creates a default version to be modified by the
   user. After having saved this configuration, it can be repeatedly used
-  for screen evaluations as long as the experimental setup is not being
-  changed.
+  for screen evaluations as long as the experimental setup is not changed.
 }
-\references{
-  Michel K, Zander T, Frommolt P et al. (2008): Predicting drug activity
-  in non-small cell lung cancer based on genetic lesions. PLoS Med, submitted
-}
+%\references{
+%  Michel K, Zander T, Frommolt P, Sos ML et al. (2008): Predicting drug activity
+%  in non-small cell lung cancer based on genetic lesions. Submitted
+
+%  Frommolt P, Thomas RK (2008): Standardized high-throughput evaluation
+%  of compound screens. Submitted
+%}
 \keyword{design}
 \keyword{datasets}

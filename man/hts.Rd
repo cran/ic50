@@ -1,11 +1,13 @@
 \name{hts}
+\alias{ic50}
 \alias{hts.96}
 \alias{hts.384}
-\title{High-throughput evaluation of compound screens}
+\title{Standardized high-throughput evaluation of compound screens}
 \description{
   Simultaneous evaluation of a large number of compound screens on 96- and 384-well plates.
 }
 \usage{
+ic50()
 hts.96(indir=".",plates=2,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
        normalize="mean",graphics="mean",outdir="./results")
 hts.384(indir=".",plates=2,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
@@ -48,7 +50,7 @@ hts.384(indir=".",plates=2,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
   by \code{plates} and the file names should be arranged in a way that
   two plates with replicates for the same measurements
   are displayed one below the other in a file browser. The data are
-  expected to be arranged in tab-delimited text files as the typical
+  expected to be arranged in tab-delimited text files which is the typical
   output of appropriate signal readers. Just as for the
   evaluation of a single measurement, the design must be specified by
   tab-delimited files for \code{measure}, \code{control} and
@@ -61,33 +63,33 @@ hts.384(indir=".",plates=2,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
   \code{"ic50.txt"} contains a tab-delimted table with the same
   evaluation as for the \code{\link{ic50.96}} and \code{\link{ic50.384}}
   functions but for all experiments one below the other.
+  
+  \code{ic50()} starts a GUI-based version of the \code{hts.96} and
+  \code{hts.384} functions. Preliminary change of the workspace
+  directory to the folder containing the data will remarkably reduce the
+  number of mouse clicks.
 }
-\value{
-  A matrix with the following columns:
-  \item{firstfile}{Filename of the first input file.}
-  \item{ic}{The inhibitory concentrations for the respective compounds.}
-  \item{cl}{Lower 0.95 confidence limits for the IC values.}
-  \item{cu}{Upper 0.95 confidence limits for the IC values.}
-  \item{inhib}{The inhibition percentages for the concentrations \code{ic}.}
-  \item{maxsd}{Maximum of the standard deviations at the measured
-    concentrations as determined from the single replicates.}
-  \item{cv}{Coefficient of variation of the IC values as determined from the single replicates.}
-  \item{area}{Area between the measured curve and an ideal kill-curve.}
+\value{A data frame with the following columns:
+  \item{first_file}{Filename of the respective first input file.}
+  \item{compound} Compound names
+  \item{ic50}{The inhibitory concentrations for the respective compounds.}
+  \item{clow}{Lower 0.95 confidence limits for the IC values.}
+  \item{cup}{Upper 0.95 confidence limits for the IC values.}
+  \item{maxsd}{Maximum of the standard deviations at the
+  measured concentrations as determined from the single replicates.}
+  \item{cv}{Coefficient of variation of the IC values as determined from
+    the single replicates.}
 }
-\references{
-Zhang JH, Chung TD, Oldenburg KR (1999): A simple statistical parameter
-for use in evaluation and validation of high-throughput screening
-assays. Journal of Biomolecular Screening 4, pp. 67-73
- 
-Tallarida RJ (2000): Drug synergism and dose-effect data
-analysis. Chapman & Hall, New York
-%Michel K, Zander T, Frommolt P et al. (2008): An integrated functional
-%genomics approach for prediction of drug activity in non-small cell lung
-%cancer.
-}
+%\references{
+%Michel K, Zander T, Frommolt P, Sos ML et al. (2008): Predicting drug activity in non-small cell lung
+%cancer based on genetic lesions. Submitted
+
+%Frommolt P, Thomas RK (2008): Standardized high-throughput evaluation
+%of compound screens. Submitted
+%}
 \author{
-  Peter Frommolt, University of Cologne \email{peter.frommolt@medizin.uni-koeln.de}\cr
-  \url{http://www.medizin.uni-koeln.de/kai/imsie/Peter.Frommolt/}  
+  Peter Frommolt, University of Cologne \email{peter.frommolt@uni-koeln.de}\cr
+  \url{http://www.medizin.uni-koeln.de/kai/imsie/homepages/Peter.Frommolt/}  
 }
 \examples{
 #Example from a non-small cell lung cancer (NSCLC) cell line screen. In
@@ -114,7 +116,6 @@ print(hts.384(indir="NSCLC_screen",
               measure="mpi384_measure.txt",control="mpi384_control.txt",dilution="mpi384_dilution.txt",
               inhib=rep(0.5,7),outdir="NSCLC_results",normalize="mean"))
 }
-\keyword{design}
 \keyword{hplot}
 \keyword{dplot}
 \keyword{nonlinear}
