@@ -1,0 +1,6 @@
+"Erlotinib"	2,2	3,2	4,2
+"Erlotinib"	2,2	3,2	4,2
+"Erlotinib"	2,2	3,2	4,2
+"Vandetanib"	5,2	6,2	7,2
+"Vandetanib"	5,2	6,2	7,2
+"Vandetanib"	5,2	6,2	7,2
