@@ -58,12 +58,12 @@
   A step-by-step tutorial document describing how to prepare the data and
   configuration  is included in the \code{ic50} package.
 }
-%\references{
-%  Michel K, Zander T, Frommolt P, Sos ML et al. (2008): Predicting drug activity
-%  in non-small cell lung cancer based on genetic lesions. Submitted
-
-%  Frommolt P, Thomas RK (2008): Standardized high-throughput evaluation
-%  of compound screens. Submitted
-%}
+\references{
+  Frommolt P, Thomas RK (2008): Standardized high-throughput evaluation
+  of cell-based compound screens. BMC Bioinformatics, 9(1): 475
+  
+  Sos ML, Michel K, Zander T, Frommolt P, Weiss J, et al. (2008): Predicting drug 
+  activity in non-small cell lung cancer based on genetic lesions. Submitted
+}
 \keyword{design}
 \keyword{datasets}

@@ -1,7 +1,7 @@
 \name{ic50}
 \alias{ic50.96}
 \alias{ic50.384}
-\title{Standardized evaluation of compound screens}
+\title{Standardized evaluation of cell-based compound screens}
 \description{
   Calculation of IC50 values, automatic drawing of dose-response curves and
   validation of compound screens on 96- and 384-well plates.
@@ -74,6 +74,8 @@ ic50.384(files,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
   determined from the single replicates. Finally, the normalized data
   rows detected from the plates in use are written to the file
   \code{"measurement.txt"}, combined in one group for each compound.
+
+  Please make use of the tutorial document in the \code{doc} folder which helps users to get started with the software.
 }
 \value{
   A data frame with the following variables:
@@ -86,16 +88,16 @@ ic50.384(files,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
   \item{cv}{Coefficient of variation of the IC values as determined
     from the single replicates.}
 }
-%\references{
-%  Michel K, Zander T, Frommolt P, Sos ML et al. (2008): Predicting drug activity
-%  in non-small cell lung cancer based on genetic lesions. Submitted
+\references{
+  Frommolt P, Thomas RK (2008): Standardized high-throughput evaluation
+  of cell-based compound screens. BMC Bioinformatics, 9(1): 475
 
-%  Frommolt P, Thomas RK (2008): Standardized high-throughput evaluation
-%  of compound screens. Submitted
-%}
+  Sos ML, Michel K, Zander T, Frommolt P, Weiss J, et al. (2008): Predicting drug activity
+  in non-small cell lung cancer based on genetic lesions. Submitted
+}
 \author{
   Peter Frommolt, University of Cologne \email{peter.frommolt@uni-koeln.de}\cr
-  \url{http://www.medizin.uni-koeln.de/kai/imsie/homepages/Peter.Frommolt/}  
+  \url{http://www.ccg.uni-koeln.de/}  
 }
 \note{
   The nonlinear regression for the sigmoidal-shaped curve is \bold{not}
@@ -120,7 +122,7 @@ print(ic50.384(files=c("HCC2429_1.txt","HCC2429_2.txt"),
                measure="mpi384_measure.txt",control="mpi384_control.txt",dilution="mpi384_dilution.txt",
                inhib=rep(0.5,7),outdir="./HCC2429_results",normalize="mean"))
 
-}
+} 
 \keyword{hplot}
 \keyword{dplot}
 \keyword{nonlinear}

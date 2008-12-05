@@ -1,8 +1,8 @@
-\name{hts}
+\name{hts} 
 \alias{ic50}
 \alias{hts.96}
 \alias{hts.384}
-\title{Standardized high-throughput evaluation of compound screens}
+\title{Standardized high-throughput evaluation of cell-based compound screens}
 \description{
   Simultaneous evaluation of a large number of compound screens on 96- and 384-well plates.
 }
@@ -71,6 +71,8 @@ hts.384(indir=".",plates=2,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
   \code{hts.384} functions. Preliminary change of the workspace
   directory to the folder containing the data will remarkably reduce the
   number of mouse clicks.
+
+  Please make use of the tutorial document in the \code{doc} folder which helps users to get started with the software.
 }
 \value{A data frame with the following columns:
   \item{first_file}{Filename of the respective first input file.}
@@ -83,16 +85,16 @@ hts.384(indir=".",plates=2,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
   \item{cv}{Coefficient of variation of the IC values as determined from
     the single replicates.}
 }
-%\references{
-%Michel K, Zander T, Frommolt P, Sos ML et al. (2008): Predicting drug activity in non-small cell lung
-%cancer based on genetic lesions. Submitted
+\references{
+  Frommolt P, Thomas RK (2008): Standardized high-throughput evaluation
+  of cell-based compound screens. BMC Bioinformatics, 9(1): 475
 
-%Frommolt P, Thomas RK (2008): Standardized high-throughput evaluation
-%of compound screens. Submitted
-%}
+  Sos ML, Michel K, Zander T, Frommolt P, Weiss J, et al. (2008): Predicting drug activity 
+  in non-small cell lung cancer based on genetic lesions. Submitted
+}
 \author{
   Peter Frommolt, University of Cologne \email{peter.frommolt@uni-koeln.de}\cr
-  \url{http://www.medizin.uni-koeln.de/kai/imsie/homepages/Peter.Frommolt/}  
+  \url{http://www.ccg.uni-koeln.de/}  
 }
 \examples{
 #Example from a non-small cell lung cancer (NSCLC) cell line screen. In

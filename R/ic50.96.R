@@ -43,7 +43,7 @@ ic50.96<-function(files,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,norma
       names(data)[(file-1)*length(measnames)+ms]<-measnames[ms]
     }
   }
-  
+
   for(cp in 1:length(cpnames)) data_merged[[cp]]<-numeric(0)
   for(ms in 1:length(data)){for(cp in 1:length(cpnames)){
     if(names(data)[ms]==cpnames[cp]){
@@ -52,7 +52,7 @@ ic50.96<-function(files,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,norma
   }}
   if(is.null(inhib)) inhib<-rep(0.5,length(cpnames))
   names(dillist)<-names(data_merged)<-cpnames
-
+  
   evaluation(data_merged,dillist,inhib,outdir,files[1],graphics)
 }
 
