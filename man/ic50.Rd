@@ -92,12 +92,13 @@ ic50.384(files,measure=NULL,control=NULL,dilution=NULL,inhib=NULL,
   Frommolt P, Thomas RK (2008): Standardized high-throughput evaluation
   of cell-based compound screens. BMC Bioinformatics, 9(1): 475
 
-  Sos ML, Michel K, Zander T, Frommolt P, Weiss J, et al. (2008): Predicting drug activity
-  in non-small cell lung cancer based on genetic lesions. Submitted
+  Sos ML, Michel K, Zander T, Weiss J, Frommolt P, et al. (2009): Predicting drug susceptibility
+  in non-small cell lung cancers based on genetic lesions. J Clin
+  Invest, 119(6): 1727-40
 }
 \author{
   Peter Frommolt, University of Cologne \email{peter.frommolt@uni-koeln.de}\cr
-  \url{http://www.ccg.uni-koeln.de/}  
+  \url{http://portal.ccg.uni-koeln.de/}  
 }
 \note{
   The nonlinear regression for the sigmoidal-shaped curve is \bold{not}
